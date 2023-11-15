@@ -334,7 +334,7 @@ SET A
         HAVING COUNT(*) >= t.capacity / 2
      );
 
-2) SELECT R.*, COUNT(CASE WHEN P.p_age <= 18 THEN 1 END) AS Children,
+3) SELECT R.*, COUNT(CASE WHEN P.p_age <= 18 THEN 1 END) AS Children,
     COUNT(CASE WHEN P.p_age BETWEEN 19 AND 59 THEN 1 END) AS Adult,
     COUNT(CASE WHEN P.p_age >= 60 THEN 1 END) AS SeniorCitizen
 FROM Route R
@@ -345,12 +345,12 @@ WHERE date BETWEEN '2023-10-01' AND '2023-10-31'
 GROUP BY R.rid
 ORDER BY COUNT(*) DESC;
 
-3) SELECT TA.*
+4) SELECT TA.*
 FROM travel_agent TA
 INNER JOIN booking B ON TA.ta_id = B.ta_id
 WHERE B.date BETWEEN '2023-09-01' AND '2023-09-30'
 GROUP BY TA.ta_id
 HAVING COUNT(*) > 10;
 
-4) select * from route   where rid IN(  select rid from schedule where tid IN(  select tid from booking where pid IN(  select pid from passenger where p_age>65)
+5) select * from route   where rid IN(  select rid from schedule where tid IN(  select tid from booking where pid IN(  select pid from passenger where p_age>65)
 ));
