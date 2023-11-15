@@ -352,5 +352,5 @@ WHERE B.date BETWEEN '2023-09-01' AND '2023-09-30'
 GROUP BY TA.ta_id
 HAVING COUNT(*) > 10;
 
-4) select * from route where rid IN(select rid from schedule where tid IN(select tid from booking where pid IN(select pid from passenger where p_age>65)
+4) select * from route   where rid IN(  select rid from schedule where tid IN(  select tid from booking where pid IN(  select pid from passenger where p_age>65)
 ));
