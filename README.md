@@ -321,18 +321,18 @@ mysql> alter table ticket add foreign key (tid) references train(tid);
 SET A
 
 1) SELECT t.*
-    -> FROM train t
-    -> INNER JOIN schedule s ON t.tid = s.tid
-    -> INNER JOIN route r ON s.rid = r.rid
-    -> WHERE (r.start_station = 'goa' AND r.end_station = 'mumbai') OR (r.start_station = 'ajmer' AND r.end_station = 'lonavala')
-    -> AND t.tid IN (
-    ->     SELECT t.tid
-    ->     FROM train t
-    ->     LEFT JOIN maintenance m ON t.tid = m.tid
-    ->     WHERE m.date <= '2023-11-30'
-    ->     GROUP BY t.tid
-    ->     HAVING COUNT(*) >= t.capacity / 2
-    -> );
+     FROM train t
+     INNER JOIN schedule s ON t.tid = s.tid
+     INNER JOIN route r ON s.rid = r.rid
+     WHERE (r.start_station = 'goa' AND r.end_station = 'mumbai') OR (r.start_station = 'ajmer' AND r.end_station = 'lonavala')
+     AND t.tid IN (
+     SELECT t.tid
+     FROM train t
+     LEFT JOIN maintenance m ON t.tid = m.tid
+         WHERE m.date <= '2023-11-30'
+        GROUP BY t.tid
+        HAVING COUNT(*) >= t.capacity / 2
+     );
 
 2)SELECT R.*, COUNT(CASE WHEN P.p_age <= 18 THEN 1 END) AS Children,
     COUNT(CASE WHEN P.p_age BETWEEN 19 AND 59 THEN 1 END) AS Adult,
