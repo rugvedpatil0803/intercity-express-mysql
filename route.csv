@@ -1,0 +1,21 @@
+r_id,r_name,distance,time_taken,operation_date,start_station,end_station,driver,co_driver
+r01,Mumbai Central- Gandhinagar  ,548,05:40,Monday_to_Saturday,stn01,stn17,st01,st08
+rr01,Mumbai Central- Gandhinagar  ,548,05:40,Monday_to_Saturday,stn17,stn01,st08,st01
+r02,New Delhi ? Himachal ,412,06:10,Friday_to_Wednesday,stn03,stn04,st05,st19
+rr02,New Delhi ? Himachal ,412,06:10,Friday_to_Wednesday,stn04,stn03,st19,st05
+r03,Secunderabad ? Visakhapatnam ,500,08:30,Sunday,stn05,stn06,st16,st17
+rr03,Secunderabad ? Visakhapatnam ,500,08:30,sunday,stn06,stn05,st17,st16
+r04,Mumbai -Sainagar Shirdi ,248,05:20,Wednesday_to_Monday,stn02,stn07,st03,st10
+rr04,Mumbai -Sainagar Shirdi ,248,05:20,Wednesday_to_Monday,stn07,stn02,st10,st03
+r05,Mumbai ? Solapur ,400,06:35,Thursday_to_Tuesday,stn02,stn08,st04,st11
+rr05,Mumbai ? Solapur ,400,06:35,Thursday_to_Tuesday,stn08,stn02,st11,st04
+r06,Bhopal-Delhi ,700,07:45,Sunday_to_Friday,stn09,stn10,st07,st28
+rr06,Bhopal-Delhi ,700,07:45,Sunday_to_Friday,stn10,stn09,st28,st07
+r07,Lonavala ? Ajmer ,1062,10:45,Saturday,stn11,stn12,st15,st16
+rr07,Lonavala ? Ajmer ,1062,10:45,Saturday,stn12,stn11,st16,st15
+r08,Dharwad - Bengaluru ,432,05:00,Monday_Wednesday_Saturday,stn13,stn14,st55,st62
+rr08,Dharwad - Bengaluru ,432,05:00,Monday_Wednesday_Saturday,stn14,stn13,st62,st55
+r09,Bhopal - Indore ,246,03:00,Every_day,stn09,stn15,,
+rr09,Bhopal - Indore ,246,03:00,Every_day,stn15,stn09,,
+r10,Mumbai - Goa ,588,06:00,Every_day,stn02,stn16,,
+rr10,Mumbai - Goa ,588,06:00,Every_day,stn16,stn02,,
