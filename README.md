@@ -321,36 +321,40 @@ mysql> alter table ticket add foreign key (tid) references train(tid);
 SET A
 
 1) SELECT t.*
-     FROM train t
-     INNER JOIN schedule s ON t.tid = s.tid
-     INNER JOIN route r ON s.rid = r.rid
-     WHERE (r.start_station = 'goa' AND r.end_station = 'mumbai') OR (r.start_station = 'ajmer' AND r.end_station = 'lonavala')
-     AND t.tid IN (
-     SELECT t.tid
-     FROM train t
-     LEFT JOIN maintenance m ON t.tid = m.tid
-         WHERE m.date <= '2023-11-30'
-        GROUP BY t.tid
-        HAVING COUNT(*) >= t.capacity / 2
+     FROM train t  
+     INNER JOIN schedule s ON t.tid = s.tid  
+     INNER JOIN route r ON s.rid = r.rid  
+     WHERE (r.start_station = 'goa' AND r.end_station = 'mumbai') OR (r.start_station = 'ajmer' AND r.end_station = 'lonavala')  
+     AND t.tid IN (  
+     SELECT t.tid  
+     FROM train t  
+     LEFT JOIN maintenance m ON t.tid = m.tid  
+         WHERE m.date <= '2023-11-30'  
+        GROUP BY t.tid  
+        HAVING COUNT(*) >= t.capacity / 2  
      );
 
-3) SELECT R.*, COUNT(CASE WHEN P.p_age <= 18 THEN 1 END) AS Children,
-    COUNT(CASE WHEN P.p_age BETWEEN 19 AND 59 THEN 1 END) AS Adult,
-    COUNT(CASE WHEN P.p_age >= 60 THEN 1 END) AS SeniorCitizen
-FROM Route R
-INNER JOIN Schedule S ON R.rid = S.rid
-INNER JOIN Booking B ON S.sid = B.sid
-INNER JOIN Passenger P ON B.pid = P.pid
-WHERE date BETWEEN '2023-10-01' AND '2023-10-31'
-GROUP BY R.rid
+3) SELECT R.*, COUNT(CASE WHEN P.p_age <= 18 THEN 1 END) AS Children,  
+    COUNT(CASE WHEN P.p_age BETWEEN 19 AND 59 THEN 1 END) AS Adult,  
+    COUNT(CASE WHEN P.p_age >= 60 THEN 1 END) AS SeniorCitizen  
+FROM Route R  
+INNER JOIN Schedule S ON R.rid = S.rid  
+INNER JOIN Booking B ON S.sid = B.sid  
+INNER JOIN Passenger P ON B.pid = P.pid  
+WHERE date BETWEEN '2023-10-01' AND '2023-10-31'  
+GROUP BY R.rid  
 ORDER BY COUNT(*) DESC;
 
-4) SELECT TA.*
-FROM travel_agent TA
-INNER JOIN booking B ON TA.ta_id = B.ta_id
-WHERE B.date BETWEEN '2023-09-01' AND '2023-09-30'
-GROUP BY TA.ta_id
-HAVING COUNT(*) > 10;
+4) SELECT TA.*  
+FROM travel_agent TA  
+INNER JOIN booking B ON TA.ta_id = B.ta_id  
+WHERE B.date BETWEEN '2023-09-01' AND '2023-09-30'  
+GROUP BY TA.ta_id  
+HAVING COUNT(*) > 10;  
 
-5) select * from route   where rid IN(  select rid from schedule where tid IN(  select tid from booking where pid IN(  select pid from passenger where p_age>65)
+5) SELECT * FROM route  
+   WHERE rid IN(  
+   SELECT rid FROM schedule WHERE tid IN(  
+   SELECT tid FROM booking WHERE pid IN(  
+   SELECT pid FROM passenger WHERE p_age>65)  
 ));
