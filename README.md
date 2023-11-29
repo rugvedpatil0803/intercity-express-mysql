@@ -330,14 +330,14 @@ _3. List all agents’ information with more than 10 confirmed bookings in the m
 
 _4. Display the details of the route most travelled by Senior Citizens._
 
-**SELECT Route.*, COUNT(CASE WHEN p_age >= 65 THEN 1 END) AS SeniorCitizenCount
-FROM Route
-LEFT JOIN Ticket ON Route.r_id = Ticket.r_id
-LEFT JOIN Booking ON Ticket.ticket_id = Booking.ticket_id
-LEFT JOIN Passenger ON Booking.pid = Passenger.p_id
-GROUP BY Route.r_id
-ORDER BY SeniorCitizenCount DESC
-LIMIT 1;**
+**select route.*, count(case when p_age >= 65 then 1 end) as SeniorCitizenCount
+from route
+left join ticket on route.r_id = ticket.r_id
+left join booking on ticket.ticket_id = booking.ticket_id
+left join passenger on booking.pid = passenger.p_id
+group by route.r_id
+order by SeniorCitizenCount desc
+limit 1;**
 
 _5. Display the details of the route where a train was always on time._
 
