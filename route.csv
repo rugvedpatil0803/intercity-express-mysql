@@ -1,0 +1,21 @@
+r_id,r_name,distance,time_taken,operation_date,departure_time,arrival_time
+r01,Mumbai Central- Gandhinagar  ,548,05:40,Monday_to_Saturday,06:00,11:40
+rr01,Mumbai Central- Gandhinagar  ,548,05:40,Monday_to_Saturday,12:00,17:40
+r02,New Delhi ? Himachal ,412,06:10,Friday_to_Wednesday,07:00,13:10
+rr02,New Delhi ? Himachal ,412,06:10,Friday_to_Wednesday,14:00,20:10
+r03,Secunderabad ? Visakhapatnam ,500,08:30,Sunday,08:00,16:30
+rr03,Secunderabad ? Visakhapatnam ,500,08:30,sunday,17:00,01:30
+r04,Mumbai -Sainagar Shirdi ,248,05:20,Wednesday_to_Monday,06:30,11:50
+rr04,Mumbai -Sainagar Shirdi ,248,05:20,Wednesday_to_Monday,13:00,18:20
+r05,Mumbai ? Solapur ,400,06:35,Thursday_to_Tuesday,07:00,13:35
+rr05,Mumbai ? Solapur ,400,06:35,Thursday_to_Tuesday,14:00,20:35
+r06,Bhopal-Delhi ,700,07:45,Sunday_to_Friday,09:00,16:45
+rr06,Bhopal-Delhi ,700,07:45,Sunday_to_Friday,17:00,00:45
+r07,Lonavala ? Ajmer ,1062,10:45,Saturday,07:00,17:45
+rr07,Lonavala ? Ajmer ,1062,10:45,Saturday,18:00,04:45
+r08,Dharwad - Bengaluru ,432,05:00,Monday_Wednesday_Saturday,10:00,15:00
+rr08,Dharwad - Bengaluru ,432,05:00,Monday_Wednesday_Saturday,18:00,21:00
+r09,Bhopal - Indore ,246,03:00,Every_day,09:00,12:00
+rr09,Bhopal - Indore ,246,03:00,Every_day,15:00,18:00
+r10,Mumbai - Goa ,588,06:00,Every_day,00:00,06:00
+rr10,Mumbai - Goa ,588,06:00,Every_day,07:00,13:00
