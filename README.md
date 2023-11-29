@@ -305,11 +305,11 @@ _mysql> alter table ticket add foreign key (r_id) references route(r_id);_
 
 # IntercityExpress PART II
 
-_Show all trains information travelling between Goa Mumbai and Ajmer-Lonavala where at least half the coaches are due for maintenance on or before 30 November this year._
+_1. Show all trains information travelling between Goa Mumbai and Ajmer-Lonavala where at least half the coaches are due for maintenance on or before 30 November this year._
 
 **select * from train where tid IN (select tid from goes_through where mt_id IN (select mt_id from maintenance where date <= '2023-11-30')) and tid IN (select tid from goes_through where date <= '2023-11-30') and tid IN (select tid from goes_through where date >= '2023-11-01');**
 
-_List all the routes in descending order of seats sold, including route information and distribution of seats sold (Children, Adult, Senior Citizen) in the month of October this year._
+_2. List all the routes in descending order of seats sold, including route information and distribution of seats sold (Children, Adult, Senior Citizen) in the month of October this year._
 
 **SELECT route.*, 
        COUNT(CASE WHEN p_age BETWEEN 0 AND 12 THEN 1 END) AS Children,
@@ -323,12 +323,12 @@ WHERE ticket.date >= '2023-10-01' AND ticket.date <= '2023-10-31'
 GROUP BY route.r_id
 ORDER BY COUNT(ticket.ticket_id) DESC;**
 
-_List all agents’ information with more than 10 confirmed bookings in the month of September this year._
+_3. List all agents’ information with more than 10 confirmed bookings in the month of September this year._
 
 **select*from travel_agent g where g.ta_id=(select b.ta_id from ticket t, booking b where b.ticket_id=t.ticket_id and month(t.date) = 09 and year(t.date) = 2023 group by b.ta_id having count(b.ticket_id) > 10);**
 
 
-_Display the details of the route most travelled by Senior Citizens._
+_4. Display the details of the route most travelled by Senior Citizens._
 
 **SELECT Route.*, COUNT(CASE WHEN p_age >= 65 THEN 1 END) AS SeniorCitizenCount
 FROM Route
@@ -339,6 +339,9 @@ GROUP BY Route.r_id
 ORDER BY SeniorCitizenCount DESC
 LIMIT 1;**
 
-_Display the details of the route where a train was always on time._
+_5. Display the details of the route where a train was always on time._
 
-**select r.* from route r, schedule s where r.r_id=s.r_id and r.departure_time=s.actual_departure_time and r.arrival_time=s.actual_arrival_time;**
+****select r.* from route r, schedule s where r.r_id=s.r_id and r.departure_time=s.actual_departure_time and r.arrival_time=s.actual_arrival_time;****__
+
+
+
