@@ -341,7 +341,7 @@ limit 1;**
 
 _5. Display the details of the route where a train was always on time._
 
-****select r.* from route r, schedule s where r.r_id=s.r_id and r.departure_time=s.actual_departure_time and r.arrival_time=s.actual_arrival_time;**
+**select r.* from route r, schedule s where r.r_id=s.r_id and r.departure_time=s.actual_departure_time and r.arrival_time=s.actual_arrival_time;**
 
 
 
