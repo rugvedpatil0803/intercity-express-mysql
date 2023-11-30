@@ -307,7 +307,7 @@ _mysql> alter table ticket add foreign key (r_id) references route(r_id);_
 
 _1. Show all trains information travelling between Goa Mumbai and Ajmer-Lonavala where at least half the coaches are due for maintenance on or before 30 November this year._
 
-**select * from train where tid IN (select tid from goes_through where mt_id IN (select mt_id from maintenance where date <= '2023-11-30')) and tid IN (select tid from goes_through where date <= '2023-11-30') and tid IN (select tid from goes_through where date >= '2023-11-01');**
+**select * from train where tid in (select tid from schedule where r_id in (select r_id from route where r_id in (select r_id from connects where start_station in (select station_id from station where s_name in ("ajmer","goa","lonavla","mumbai ") and end_station in (select station_id from station where s_name in ("ajmer","goa","lonavla","mumbai "))))) and (milage>=5000 or tid in (select tid from goes_through where date<'2023-06-28')));**
 
 _2. List all the routes in descending order of seats sold, including route information and distribution of seats sold (Children, Adult, Senior Citizen) in the month of October this year._
 
