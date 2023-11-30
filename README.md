@@ -311,17 +311,7 @@ _1. Show all trains information travelling between Goa Mumbai and Ajmer-Lonavala
 
 _2. List all the routes in descending order of seats sold, including route information and distribution of seats sold (Children, Adult, Senior Citizen) in the month of October this year._
 
-**SELECT route.*, 
-       COUNT(CASE WHEN p_age BETWEEN 0 AND 12 THEN 1 END) AS Children,
-       COUNT(CASE WHEN p_age BETWEEN 13 AND 64 THEN 1 END) AS Adult,
-       COUNT(CASE WHEN p_age >= 65 THEN 1 END) AS SeniorCitizen
-FROM route
-LEFT JOIN ticket ON route.r_id = ticket.r_id
-LEFT JOIN booking ON ticket.ticket_id = booking.ticket_id
-LEFT JOIN passenger ON booking.pid = passenger.p_id
-WHERE ticket.date >= '2023-10-01' AND ticket.date <= '2023-10-31'
-GROUP BY route.r_id
-ORDER BY COUNT(ticket.ticket_id) DESC;**
+**select r.*, count(case when p.p_age between 0 and 12 then 1 end) as Children, count(case when p.p_age between 13 and 64 then 1 end) as Adult, count(case when p.p_age >= 65 then 1 end) as SeniorCitizen from passenger p, route r, booking b, ticket t where p.p_id=b.pid and b.ticket_id=t.ticket_id and t.r_id=r.r_id and t.date >= '2023-10-01' and t.date <= '2023-10-31'group by r.r_id order by count(t.ticket_id) desc;**
 
 _3. List all agents’ information with more than 10 confirmed bookings in the month of September this year._
 
@@ -330,14 +320,7 @@ _3. List all agents’ information with more than 10 confirmed bookings in the m
 
 _4. Display the details of the route most travelled by Senior Citizens._
 
-**select route.*, count(case when p_age >= 65 then 1 end) as SeniorCitizenCount
-from route
-left join ticket on route.r_id = ticket.r_id
-left join booking on ticket.ticket_id = booking.ticket_id
-left join passenger on booking.pid = passenger.p_id
-group by route.r_id
-order by SeniorCitizenCount desc
-limit 1;**
+**select r.* from route r where r.r_id IN(select t.r_id from ticket t where t.ticket_id IN(select b.ticket_id from booking b, passenger p where b.pid=p.p_id and p.p_age>=65));**
 
 _5. Display the details of the route where a train was always on time._
 
