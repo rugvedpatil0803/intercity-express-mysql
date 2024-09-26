@@ -15,7 +15,7 @@
 **The Distribution for the PART I is as Follows:**  
 _ER Diagram was initially drawn by each member of the group and after the common discussion we concluded to the attached ER Diagram below:_  
 
-_The Relational Schemas was designed by three of us on the same day when we finalised the ER Diagram_  
+```_The Relational Schemas was designed by three of us on the same day when we finalised the ER Diagram_```  
 
 _And the creation of database was also performed by three of us individually on our personnel computers and after getting the errors we jot them down and discussed them on another group meet_  
 
