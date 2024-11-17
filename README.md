@@ -1,4 +1,4 @@
-# Intercity Express  
+# Intercity Express  (MySQL)
 
 **This Repository contains both PART I and PART II of the Intercity Express Assignment**  
 **_Name: Rugved Ajit Patil_**  
