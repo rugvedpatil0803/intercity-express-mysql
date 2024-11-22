@@ -33,7 +33,8 @@ _Set C: Vikas Sharma (23112042)_
 
 Note: This ER Diagram is made using Lucidchart and paint.
 
-![er diagram](https://github.com/vickspanda/IntercityExpress/assets/116336028/2facb5fa-1866-4371-b757-6326681e6fff)
+
+![SmartSelect_20240208_125029_Samsung Notes (1)](https://github.com/user-attachments/assets/e4644b1a-4e61-4b93-9d8d-5517f4840d89)
 
 
 **For IntercityExpress Project, the Relational Schemas are as follows:**  
