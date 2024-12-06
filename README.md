@@ -31,10 +31,14 @@ _Set C: Vikas Sharma (23112042)_
 
 **For IntercityExpress Project, the ER Diagram is as follows:**
 
+
 Note: This ER Diagram is made using Lucidchart and paint.
 
 
 ![SmartSelect_20240208_125029_Samsung Notes (1)](https://github.com/user-attachments/assets/e4644b1a-4e61-4b93-9d8d-5517f4840d89)
+
+
+![WhatsApp Image 2024-12-06 at 18 31 54](https://github.com/user-attachments/assets/6a677e09-7a1e-45e8-a4d6-bcb760603e52)
 
 
 **For IntercityExpress Project, the Relational Schemas are as follows:**  
